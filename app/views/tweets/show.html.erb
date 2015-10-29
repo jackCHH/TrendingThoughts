@@ -1,0 +1,5 @@
+<h3>Showing Recent Tweets for Twitter Handle @<%= @tweet.handle%></h3>
+
+<%@client.user_timeline(@tweet.handle).each do |tweet|%>
+	<p><%= tweet.text%></p>
+<% end %>
