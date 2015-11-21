@@ -6,6 +6,7 @@ gem "figaro"
 gem 'pg'
 gem 'indico', '~> 0.5.3'
 gem 'friendly_id', '~> 5.1.0'
+gem 'thin', '~> 1.6', '>= 1.6.4'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
