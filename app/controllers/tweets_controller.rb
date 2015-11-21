@@ -21,6 +21,7 @@ class TweetsController < ApplicationController
 	def show
 		Indico.api_key = ENV["indico_key"]
 		@tweet = Tweet.friendly.find(params[:id])
+		@current_tweets = $client.search(@tweet.handle, result_type: "recent", lang: "en")
 	end
 
 	private
