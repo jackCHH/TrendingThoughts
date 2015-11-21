@@ -1,9 +1,7 @@
 <h1>Showing Recent Tweets for #<%= @tweet.handle%></h1>
 
-<% $client.search(@tweet.handle, result_type: "popular").take(5).each do |tweet|%>
+<% $client.search(@tweet.handle, result_type: "recent").take(50).each do |tweet|%>
 	<h4><%= tweet.text%></h4>
 	<h5><%= tweet.created_at%></h5>
-	<p> The above tweet is <%= (Indico.sentiment_hq(tweet.text)*100).round(2)%>% positive</p>
-
-
+	<p> The above tweet is <%= Tweet.get_senti_value(tweet.text)%>% positive</p>
 <% end %>
