@@ -1,7 +1,9 @@
-<h1>Showing Recent Tweets for Twitter Handle @<%= @tweet.handle%></h1>
+<h1>Showing Recent Tweets for #<%= @tweet.handle%></h1>
 
-<%$client.user_timeline(@tweet.handle, :count => 5).each do |tweet|%>
+<% $client.search(@tweet.handle, result_type: "popular").take(5).each do |tweet|%>
 	<h4><%= tweet.text%></h4>
 	<h5><%= tweet.created_at%></h5>
 	<p> The above tweet is <%= (Indico.sentiment_hq(tweet.text)*100).round(2)%>% positive</p>
+
+
 <% end %>
