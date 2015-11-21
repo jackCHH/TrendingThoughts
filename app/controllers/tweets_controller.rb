@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+	require 'indico'
 
 	def new
 		@tweet = Tweet.new
@@ -6,7 +7,11 @@ class TweetsController < ApplicationController
 
 	def create
 		@tweet = Tweet.new(tweets_params)
-		if @tweet.save
+
+		if Tweet.exists?(:handle => @tweet.handle)
+			@original_tweet = Tweet.find_by_handle(@tweet.handle)
+			redirect_to @original_tweet
+		elsif @tweet.save
 			redirect_to @tweet
 		else
 			render 'new'
@@ -14,15 +19,8 @@ class TweetsController < ApplicationController
 	end
 
 	def show
-		@client = Twitter::REST::Client.new do |config|
-		  config.consumer_key = ENV['twitter_consumer_key']
-		  config.consumer_secret = ENV['twitter_consumer_secret']
-		  config.access_token = ENV['twitter_access_token']
-		  config.access_token_secret = ENV['twitter_access_secret']
-		end
-
-		@tweet = Tweet.find(params[:id])
-		
+		Indico.api_key = ENV["indico_key"]
+		@tweet = Tweet.friendly.find(params[:id])
 	end
 
 	private
