@@ -1,5 +1,8 @@
 <h1>Showing Recent Tweets for #<%= @tweet.handle%></h1>
 
+<% @tweets_array.each do |tweet| %>
+	<h4><%= tweet[0]%></h4>
+	<p><%= tweet[1]%></p>
+<% end %>
 
 
-<%= @tweets_array%>

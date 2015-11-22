@@ -10,11 +10,51 @@ class Tweet < ActiveRecord::Base
 	end
 
 	def self.get_tweets_array(tweets)
-		arr = []
-		tweets.take(5).each do |tweet|
-			arr << tweet.text
+		
+		arr = Array.new(50){Array.new(2)}
+		threads = []
+
+		count = 0
+
+		tweets.take(50).each do |tweet|
+			arr[count][0] = tweet.text
+			count += 1
 		end
+
+		#return arr
+		threads << Thread.new {
+			(0..9).each do |i|
+				arr[i][1] = get_senti_value(arr[i][0])
+			end
+		}
+		threads << Thread.new {
+			(10..19).each do |i|
+				arr[i][1] = get_senti_value(arr[i][0])
+			end
+		}
+		threads << Thread.new {
+			(20..29).each do |i|
+				arr[i][1] = get_senti_value(arr[i][0])
+			end
+		}
+		threads << Thread.new {
+			(30..39).each do |i|
+				arr[i][1] = get_senti_value(arr[i][0])
+			end
+		}
+		threads << Thread.new {
+			(40..49).each do |i|
+				arr[i][1] = get_senti_value(arr[i][0])
+			end
+		}
+
+		threads.each(&:join)
+
 		return arr
+
+		
+		
+
 	end
 
 	def downcase_fields
