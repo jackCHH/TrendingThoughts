@@ -1,7 +1,5 @@
 <h1>Showing Recent Tweets for #<%= @tweet.handle%></h1>
 
-<% @current_tweets.take(10).each do |tweet|%>
-	<h4><%= tweet.text%></h4>
-	<h5><%= tweet.created_at%></h5>
-	<p> The above tweet is <%= Tweet.get_senti_value(tweet.text)%>% positive</p>
-<% end %>
+
+
+<%= @tweets_array%>

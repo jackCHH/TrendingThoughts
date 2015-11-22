@@ -9,6 +9,14 @@ class Tweet < ActiveRecord::Base
 		(Indico.sentiment_hq(string)*100).round(2)
 	end
 
+	def self.get_tweets_array(tweets)
+		arr = []
+		tweets.take(5).each do |tweet|
+			arr << tweet.text
+		end
+		return arr
+	end
+
 	def downcase_fields
       self.handle.downcase!
    end
