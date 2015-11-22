@@ -11,13 +11,14 @@ class Tweet < ActiveRecord::Base
 
 	def self.get_tweets_array(tweets)
 
-		arr = Array.new(100){Array.new(2)}
+		arr = Array.new(50){Array.new(3)}
 		threads = []
 
 		count = 0
 
-		tweets.take(100).each do |tweet|
+		tweets.take(50).each do |tweet|
 			arr[count][0] = tweet.text
+			arr[count][2] = tweet.created_at
 			#arr[count][1] = get_senti_value(tweet.text)
 			count += 1
 		end
@@ -44,31 +45,6 @@ class Tweet < ActiveRecord::Base
 		}
 		threads << Thread.new {
 			(40..49).each do |i|
-				arr[i][1] = get_senti_value(arr[i][0])
-			end
-		}
-		threads << Thread.new {
-			(50..59).each do |i|
-				arr[i][1] = get_senti_value(arr[i][0])
-			end
-		}
-		threads << Thread.new {
-			(60..69).each do |i|
-				arr[i][1] = get_senti_value(arr[i][0])
-			end
-		}
-		threads << Thread.new {
-			(70..79).each do |i|
-				arr[i][1] = get_senti_value(arr[i][0])
-			end
-		}
-		threads << Thread.new {
-			(80..89).each do |i|
-				arr[i][1] = get_senti_value(arr[i][0])
-			end
-		}
-		threads << Thread.new {
-			(90..99).each do |i|
 				arr[i][1] = get_senti_value(arr[i][0])
 			end
 		}

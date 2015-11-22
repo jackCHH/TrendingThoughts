@@ -1,5 +1,15 @@
-<%= form_for @tweet do |f|%>
-	<%= f.label :handle, "Please Enter a Twitter Topic(without #) or HashTag(with #)" %>
-	<%= f.text_field :handle%>
-	<%= f.submit "Submit"%>
-<% end%>
+<div id ='new_page'>
+	<div class ='row'>
+		<div class = 'col-md-8 col-md-offset-2'>
+			<h3 id = 'intro_text'>Please Enter a Twitter Topic(without #) or HashTag(with #)</p>
+			<div class = 'row'>
+				<div class = 'col-md-8 col-md-offset-2'>
+					<%= form_for @tweet do |f|%>
+						<%= f.text_field :handle%>
+						<%= f.submit "Let's Go!", class: "btn btn-lg btn-danger"%>
+					<% end%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
