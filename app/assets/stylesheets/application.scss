@@ -23,6 +23,23 @@ body {
 
 #intro_text {
 	text-align: center;
+	font-size: 2.3em;
+	color: white;
+	font-weight: bold;
+
+}
+
+
+#submit {
+	float: right;
+}
+
+#show{
+	color: white;
+
+	#show_title{
+		margin-bottom: 50px;
+	}
 }
 
 #new_page{

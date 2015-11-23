@@ -1,9 +1,14 @@
-<h1>Showing Recent Tweets for <%= @tweet.handle%></h1>
+<div id = 'show'>
+	<h1 id = 'show_title'>Showing Recent Tweets for <%= @tweet.handle%></h1>
 
-<% @tweets_array.each do |tweet| %>
-	<h4><%= tweet[0]%></h4>
-	<p>The above tweet is <%= tweet[1]%>% positive!</p>
-	<p><%= tweet[2]%></p>
-<% end %>
+	<% @tweets_array.each do |tweet| %>
+		<br>
+		<h4><%= tweet[0]%></h4>
+		<p>The above tweet is <b><%= tweet[1]%>%</b> positive!</p>
+		<p><%= tweet[2]%></p>
+		<br>
+	<% end %>
+</div>
+
 
 
