@@ -6,6 +6,10 @@ gem "figaro"
 gem 'pg'
 gem 'indico', '~> 0.5.3'
 gem 'friendly_id', '~> 5.1.0'
+gem 'thin', '~> 1.6', '>= 1.6.4'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem "d3-rails"
+gem 'gon', '~> 6.0', '>= 6.0.1'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

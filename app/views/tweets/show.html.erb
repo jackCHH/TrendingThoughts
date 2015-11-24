@@ -1,9 +1,16 @@
-<h1>Showing Recent Tweets for #<%= @tweet.handle%></h1>
+<div id = 'show'>
+	<h1 id = 'show_title'>Showing Recent Tweets for <%= @tweet.handle%></h1>
 
-<% $client.search(@tweet.handle, result_type: "popular").take(5).each do |tweet|%>
-	<h4><%= tweet.text%></h4>
-	<h5><%= tweet.created_at%></h5>
-	<p> The above tweet is <%= (Indico.sentiment_hq(tweet.text)*100).round(2)%>% positive</p>
+	<div class="chart"></div>
+
+	<% @tweets_array.each do |tweet| %>
+		<br>
+		<h4><%= tweet[0]%></h4>
+		<p>The above tweet is <b><%= tweet[1]%>%</b> positive!</p>
+		<p><%= tweet[2]%></p>
+		<br>
+	<% end %>
+</div>
 
 
-<% end %>
+
