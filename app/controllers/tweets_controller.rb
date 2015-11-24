@@ -25,6 +25,9 @@ class TweetsController < ApplicationController
 
 		@tweets_array = Tweet.get_tweets_array(current_tweets)
 
+		tweets_array_val_json = Tweet.get_tweets_json(@tweets_array)
+		gon.senti_array = tweets_array_val_json
+
 
 
 	end

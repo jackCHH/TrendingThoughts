@@ -1,6 +1,8 @@
 <div id = 'show'>
 	<h1 id = 'show_title'>Showing Recent Tweets for <%= @tweet.handle%></h1>
 
+	<div class="chart"></div>
+
 	<% @tweets_array.each do |tweet| %>
 		<br>
 		<h4><%= tweet[0]%></h4>

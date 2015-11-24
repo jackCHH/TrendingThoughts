@@ -19,29 +19,43 @@ body {
 	background: #348F50; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #348F50 , #56B4D3); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #348F50 , #56B4D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 
-#intro_text {
-	text-align: center;
-	font-size: 2.3em;
-	color: white;
-	font-weight: bold;
-
-}
-
-
-#submit {
-	float: right;
-}
-
-#show{
-	color: white;
-
-	#show_title{
-		margin-bottom: 50px;
+	.chart div {
+		  font: 10px sans-serif;
+		  background-color: steelblue;
+		  text-align: right;
+		  padding: 3px;
+		  margin: 1px;
+		  color: white;
 	}
+
+	#intro_text {
+		text-align: center;
+		font-size: 2.3em;
+		color: white;
+		font-weight: bold;
+
+	}
+
+
+	#submit {
+		float: right;
+	}
+
+	#show{
+		color: white;
+
+		#show_title{
+			margin-bottom: 50px;
+		}
+	}
+
+	#new_page{
+		margin-top: 25%
+	}
+
 }
 
-#new_page{
-	margin-top: 25%
-}
+
+
+

@@ -53,9 +53,15 @@ class Tweet < ActiveRecord::Base
 
 		return arr
 
-		
-		
+	end
 
+	def self.get_tweets_json(tweets_array)
+		arr = []
+		tweets_array.each do |tweet|
+			arr << tweet[1]
+		end
+
+		return arr
 	end
 
 	def downcase_fields
