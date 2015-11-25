@@ -3,12 +3,14 @@
 
 	<div class="chart"></div>
 
-	<% @tweets_array.each do |tweet| %>
-		<br>
-		<h4><%= tweet[0]%></h4>
-		<p>The above tweet is <b><%= tweet[1]%>%</b> positive!</p>
-		<p><%= tweet[2]%></p>
-		<br>
+	<% @tweets_array.each_with_index do |tweet, index| %>
+		<div id = 'tweet_<%=index%>'>
+			<br>
+			<h4><%= tweet[0]%></h4>
+			<p>The above tweet is <b><%= tweet[1]%>%</b> positive!</p>
+			<p><%= tweet[2]%></p>
+			<br>
+		</div>
 	<% end %>
 </div>
 
