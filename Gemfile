@@ -34,8 +34,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# gem for timezone bug
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # gem file for TypeError: Object doesn't support this property or method
 gem 'coffee-script-source', '1.8.0'
