@@ -48,7 +48,7 @@ GEM
       sass (>= 3.3.0)
     buftok (0.2.0)
     builder (3.2.2)
-    byebug (6.0.2)
+    byebug (8.2.0)
     chunky_png (1.3.5)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -56,6 +56,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
+    coffee-script-source (1.8.0)
     coffee-script-source (1.9.1.1)
     d3-rails (3.5.6)
       railties (>= 3.1)
@@ -90,7 +91,7 @@ GEM
     http-form_data (1.0.1)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
-    indico (0.5.3)
+    indico (0.5.4)
       inifile (~> 3.0.0)
       oily_png (~> 1.2.0)
     inifile (3.0.0)
@@ -108,17 +109,20 @@ GEM
       mime-types (>= 1.16, < 3)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
-    mime-types (2.6.2)
+    mime-types (2.99)
     mini_portile (0.6.2)
-    minitest (5.8.2)
+    minitest (5.8.3)
     multi_json (1.11.2)
     multipart-post (2.0.0)
     naught (1.1.0)
-    nokogiri (1.6.6.2)
+    nokogiri (1.6.6.4)
+      mini_portile (~> 0.6.0)
+    nokogiri (1.6.6.4-x86-mingw32)
       mini_portile (~> 0.6.0)
     oily_png (1.2.0)
       chunky_png (~> 1.3.1)
-    pg (0.18.2)
+    pg (0.18.4)
+    pg (0.18.4-x86-mingw32)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -161,7 +165,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     simple_oauth (0.3.1)
-    spring (1.4.0)
+    spring (1.4.4)
     sprockets (3.4.0)
       rack (> 1, < 3)
     sprockets-rails (2.3.3)
@@ -169,6 +173,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.11)
+    sqlite3 (1.3.11-x86-mingw32)
     thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -191,12 +196,15 @@ GEM
       simple_oauth (~> 0.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2015.7)
+      tzinfo (>= 1.0.0)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
+    unf_ext (0.0.7.1-x86-mingw32)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -205,11 +213,13 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   byebug
   coffee-rails (~> 4.1.0)
+  coffee-script-source (= 1.8.0)
   d3-rails
   figaro
   friendly_id (~> 5.1.0)
@@ -226,8 +236,6 @@ DEPENDENCIES
   thin (~> 1.6, >= 1.6.4)
   turbolinks
   twitter
+  tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-
-BUNDLED WITH
-   1.10.6
