@@ -3,6 +3,10 @@ class TweetsController < ApplicationController
 
 	def new
 		@tweet = Tweet.new
+
+		#following only works with Postgres
+		@random_tweet = Tweet.order("RANDOM()").first
+
 	end
 
 	def create
@@ -10,15 +14,19 @@ class TweetsController < ApplicationController
 
 		if Tweet.exists?(:handle => @tweet.handle)
 			@original_tweet = Tweet.find_by_handle(@tweet.handle)
+			@original_tweet.increment!(:counter)
 			redirect_to @original_tweet
 		elsif @tweet.save
+			@tweet.increment!(:counter)
 			redirect_to @tweet
 		else
 			render 'new'
 		end
+
 	end
 
 	def show
+
 		Indico.api_key = ENV["indico_key"]
 		@tweet = Tweet.friendly.find(params[:id])
 		current_tweets = $client.search("#{@tweet.handle} -rt", result_type: "recent", lang: "en")

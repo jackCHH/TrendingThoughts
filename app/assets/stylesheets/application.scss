@@ -20,13 +20,22 @@ body {
 	background: -webkit-linear-gradient(to left, #348F50 , #56B4D3); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #348F50 , #56B4D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	.chart div {
+	.chart div{
 		  font: 12px sans-serif;
 		  background-color: #DC143C;
 		  text-align: right;
 		  padding: 6px;
-		  color: white;
 
+	}
+
+	.bar:hover{
+		background-color: #960e29;
+	}
+
+	.bar a {
+		color: #F0F8FF;
+		text-decoration: none;
+		display: block;
 	}
 
 	#intro_text {
@@ -40,6 +49,8 @@ body {
 
 	#submit {
 		float: right;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 	#show{
@@ -47,6 +58,7 @@ body {
 
 		#show_title{
 			margin-bottom: 50px;
+			text-align: center;
 		}
 	}
 
