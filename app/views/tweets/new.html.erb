@@ -8,22 +8,24 @@
 						<%= f.text_field :handle%>
 						<%= f.submit "Let's Go!", class: "btn btn-md btn-danger"%>
 					<% end%>
-					<h5 id = 'show'>Currently Trending: </h5>
-					<% @top_tweets.each do |top|%>
-						<%= link_to top.handle, top%>
+					<% unless Tweet.count < 5%>
+						<h5 id = 'show'>Currently Trending: </h5>
+						<% @top_tweets.each do |top|%>
+							<%= link_to top.handle, top%>
+						<% end %>
 					<% end %>
 				</div>
 			</div>
-			<div class = 'row'>
-				<h5 id = 'intro_text' style = "font-size: 1.3em;">OR</h5>
-			</div>
-			<div class = 'row'>
-				<div class = 'col-md-8' id = 'submit'>
-					<% unless Tweet.blank?%>
-						<%=link_to "Experience Randomness!", @random_tweet, class: 'btn btn-md btn-danger' %>
-					<% end %>
+			<% unless Tweet.count < 1%>
+				<div class = 'row'>
+					<h5 id = 'intro_text' style = "font-size: 1.3em;">OR</h5>
 				</div>
-			</div>
+				<div class = 'row'>
+					<div class = 'col-md-8' id = 'submit'>
+							<%=link_to "Experience Randomness!", @random_tweet, class: 'btn btn-md btn-danger' %>
+					</div>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>
