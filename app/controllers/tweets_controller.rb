@@ -7,6 +7,8 @@ class TweetsController < ApplicationController
 		#following only works with Postgres
 		@random_tweet = Tweet.order("RANDOM()").first
 
+		@top_tweets = Tweet.limit(5).order('counter desc')
+
 	end
 
 	def create

@@ -6,8 +6,12 @@
 				<div class = 'col-md-8' id = 'submit'>
 					<%= form_for @tweet do |f|%>
 						<%= f.text_field :handle%>
-						<%= f.submit "Let's Go!", class: "btn btn-lg btn-danger"%>
+						<%= f.submit "Let's Go!", class: "btn btn-md btn-danger"%>
 					<% end%>
+					<h5 id = 'show'>Currently Trending: </h5>
+					<% @top_tweets.each do |top|%>
+						<%= link_to top.handle, top%>
+					<% end %>
 				</div>
 			</div>
 			<div class = 'row'>
@@ -16,7 +20,7 @@
 			<div class = 'row'>
 				<div class = 'col-md-8' id = 'submit'>
 					<% unless Tweet.blank?%>
-						<%=link_to "Experience Randomness!", @random_tweet, class: 'btn btn-lg btn-danger' %>
+						<%=link_to "Experience Randomness!", @random_tweet, class: 'btn btn-md btn-danger' %>
 					<% end %>
 				</div>
 			</div>
