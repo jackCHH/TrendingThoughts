@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	var x = d3.scale.linear()
 	    .domain([0, d3.max(data)])
-	    .range([0, 800]);
+	    .range([0, 700]);
 
 
 
