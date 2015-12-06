@@ -11,7 +11,7 @@
 					<% unless Tweet.count < 5%>
 						<h5 id = 'show'>Currently Trending: </h5>
 						<% @top_tweets.each do |top|%>
-							<%= link_to top.handle, top%>
+							<%= link_to top.handle, top, class: 'top'%>
 						<% end %>
 					<% end %>
 				</div>

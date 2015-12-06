@@ -8,9 +8,9 @@
 			<% @tweets_array.each_with_index do |tweet, index| %>
 				<div id = 'tweet_<%=index%>'>
 					<br>
-					<h4><%= tweet[0]%></h4>
-					<p>The above tweet is <b><%= tweet[1]%>%</b> positive!</p>
-					<p><%= tweet[2]%></p>
+					<h3><%= tweet[0]%></h4>
+					<p style = 'color:#DC143C;'>The above tweet is <b><%= tweet[1]%>%</b> positive!</p>
+					<p style = 'color:#DC143C;'><%= tweet[2]%></p>
 					<br>
 				</div>
 			<% end %>
