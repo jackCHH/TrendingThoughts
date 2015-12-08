@@ -30,11 +30,15 @@ class TweetsController < ApplicationController
 	def show
 
 		Indico.api_key = ENV["indico_key"]
+
+		#retreive tweets from Twitter server
 		@tweet = Tweet.friendly.find(params[:id])
 		current_tweets = $client.search("#{@tweet.handle} -rt", result_type: "recent", lang: "en")
 
+		# send all current tweets to model and do computation.
 		@tweets_array = Tweet.get_tweets_array(current_tweets)
 
+		# sends back to javascript
 		tweets_array_val_json = Tweet.get_tweets_json(@tweets_array)
 		gon.senti_array = tweets_array_val_json
 

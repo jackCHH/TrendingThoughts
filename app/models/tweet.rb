@@ -5,10 +5,12 @@ class Tweet < ActiveRecord::Base
 	before_save :downcase_fields
 	friendly_id :handle, use: :slugged
 
+	# return sentiment value.
 	def self.get_senti_value(string)
 		(Indico.sentiment_hq(string)*100).round(2)
 	end
 
+	#computation.
 	def self.get_tweets_array(tweets)
 
 		arr = Array.new(50){Array.new(3)}
@@ -55,6 +57,7 @@ class Tweet < ActiveRecord::Base
 
 	end
 
+	# Not used. Purge later. 
 	def self.get_tweets_json(tweets_array)
 		arr = []
 		tweets_array.each do |tweet|
@@ -64,6 +67,7 @@ class Tweet < ActiveRecord::Base
 		return arr
 	end
 
+	# downcase all query inputs before save.
 	def downcase_fields
       self.handle.downcase!
    end
